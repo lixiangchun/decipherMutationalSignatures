@@ -12,7 +12,7 @@ sampleNamesFile=../data/sample.txt
 # Rows represent mutation type and columns sample names. Each cell entry
 #+is the number of corresponding mutation types in the sample. Note that
 #+the row number of this file must be equal row numbers of both 'typesFile'
-#+and 'subtypesFile'.
+#+and 'subtypesFile'. Values must be >= 0!!!
 originalGenomesFile=../data/gexpr.txt
 
 # removes weak mutation types, i.e. reduces the dimmensions, default value
