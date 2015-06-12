@@ -20,5 +20,5 @@ and relatively low reconstruction error.
 
 2. Rank_eq_%d.exposure.txt - Text file of matrix normalized H factorized from A for every rank examined (i.e. A ~ W * H).
 
-3. Rank_eq_%d.exposure.txt - Text file of matrix normalized W factorized from A for every rank examined (i.e. A ~ W * H).
+3. Rank_eq_%d.processes.txt - Text file of matrix normalized W factorized from A for every rank examined (i.e. A ~ W * H).
  
