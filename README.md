@@ -1,4 +1,4 @@
-# decipherMutationalSignatures
+# A pipeline to decipher mutational signatures operative in cancer 
 Deciphering mutational signatures with alternative algorithms.
 
 Mutational signature deciphering based on source code from previous publications (Alexandrov L. B. et al.) but provides
