@@ -43,6 +43,6 @@ maxIterPerNmfRun=200000
 DECIPHER_MUTATIONAL_SIGNATURE_PATH=/ifshk1/BC_CANCER/03user/lixiangchun/iCGA/v0.02/decipherMutationalSignatures
 MCRroot=/ifshk1/BC_CANCER/03user/lixiangchun/Software/INSTALL/MCR_R2013a/INSTALL/v81
 
-time -p bash $DECIPHER_MUTATIONAL_SIGNATURE_PATH/run_decipherMutationalSignatures.sh $MCRroot $typesFile $subtypesFile $sampleNamesFile $originalGenomesFile $removeWeakMutationTypes $algorithm $minNumberOfSignature $maxNumberOfSignature $iterationsPerCore $numberOfWorkers $maxIterPerNmfRun
+time -p bash $DECIPHER_MUTATIONAL_SIGNATURE_PATH/run_decipherMutationalSignatures_v1.sh $MCRroot $typesFile $subtypesFile $sampleNamesFile $originalGenomesFile $removeWeakMutationTypes $algorithm $minNumberOfSignature $maxNumberOfSignature $iterationsPerCore $numberOfWorkers $maxIterPerNmfRun
 
 
