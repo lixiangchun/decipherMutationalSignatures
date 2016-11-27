@@ -1,28 +1,29 @@
 #!/bin/bash
 
 # Mutation types
-typesFile=../data/gene.txt
+typesFile=types.txt
 
 # Mutational categories for mutation types in 'typesFile'
-subtypesFile=../data/gene.txt
+subtypesFile=subtypes.txt
 
 # Sample names, i.e. column names of input matrix in 'originalGenomesFile'
-sampleNamesFile=../data/sample.txt
+sampleNamesFile=sampleNames.txt
 
 # Rows represent mutation type and columns sample names. Each cell entry
 #+is the number of corresponding mutation types in the sample. Note that
-#+the row number of this file must be equal row numbers of both 'typesFile'
+#+the row number of this file must be equal to row numbers of both 'typesFile'
 #+and 'subtypesFile'. Values must be >= 0!!!
-originalGenomesFile=../data/gexpr.txt
+originalGenomesFile=originalGenomes.txt
 
 # removes weak mutation types, i.e. reduces the dimmensions, default value
 #+in the original code is 0.01, users can set it to 0.0 if they want to use
 #+this framework as consensus clustering for gene expression analysis.
-removeWeakMutationTypes=0.0
+removeWeakMutationTypes=0.01
 
 # Algorithm to use, i.e. 1. brunet, 2. mult, 3. als, 4. gdclsNMF, 5. sNMFR
 # The original framework uses 'brunet'.
-algorithm='sNMFR'
+# Visit http://lixiangchun.github.io/msig/ to check the performance of different NMF algorithms.
+algorithm='brunet'
 
 # The min number of signatures
 minNumberOfSignature=1
@@ -36,7 +37,7 @@ iterationsPerCore=100
 # Number of processes to use, if >1 a matlabpool is open for parallel computing.
 numberOfWorkers=1
 
-maxIterPerNmfRun=20000
+maxIterPerNmfRun=200000
 
 # The following 2 variables must be set appropriately.
 DECIPHER_MUTATIONAL_SIGNATURE_PATH=/ifshk1/BC_CANCER/03user/lixiangchun/iCGA/v0.02/decipherMutationalSignatures

@@ -1,5 +1,5 @@
 # decipherMutationalSignatures
-Deciphering mutational signatures with alternative algorithms
+Deciphering mutational signatures with alternative algorithms.
 
 Mutational signature deciphering based on source code from previous publications (Alexandrov L. B. et al.) but provides
 simpler command line to run. Besides, it provides several other algorithms. This program is binary code compiled via mcc,
@@ -22,3 +22,33 @@ and relatively low reconstruction error.
 
 3. Rank_eq_%d.processes.txt - Text file of matrix normalized W factorized from A for every rank examined (i.e. A ~ W * H).
  
+## Visualize mutational signatures within R
+```
+library(cgat) ## Cancer Genome Analysis Toolkit, will be available on Github soon.
+library(ggplot2)
+ # Not run: if the mutation signature is analysed by the matlab pipeline
+fl <- "Rank_eq_3.processes.txt"
+d <- read.table(fl, header=TRUE, stringsAsFactors=FALSE)
+d <- lxctk::sortDataFrame(d, c("types","subtypes")) 
+w <- d[,3:ncol(d)]
+colnames(w) <- paste("Signature",1:ncol(w),sep="")
+
+ # w is the mutation signatures identified from NMF
+p = plot_96_profile(w)
+print(p)
+     
+ # Or impose additional controls
+ymax = 0.2
+p = p + coord_cartesian(ylim=c(0,ymax)) # Set the upper bound of ylim
+p = p + scale_y_continuous(breaks=seq(0, ymax, 0.05)) # scale y-axis with a step of 0.05
+
+ # Save to file
+pdf.fig = "mutation_signature.pdf"
+K <- ncol(w)
+width <- 16
+height <- ifelse(K==1,3,K*2)
+pdf(file=pdf.fig,width=width,height=height)
+p <- plot_96_profile(w, x.cex=2, scale=1.2)
+print(p)
+dev.off()
+```
