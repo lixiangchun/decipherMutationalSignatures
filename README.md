@@ -63,3 +63,6 @@ p <- plot_96_profile(w, x.cex=2, scale=1.2)
 print(p)
 dev.off()
 ```
+
+### For detail evaluation of the impact of different NMF algorithm on mutation signature deciphering results, please click [here](http://lixiangchun.github.io/msig/).
+
